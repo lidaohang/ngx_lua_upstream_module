@@ -1089,8 +1089,8 @@ ngx_http_lua_upstream_add_peer(lua_State * L)
         return 2;
     }
      
-    old_size = (ucscf->number + 1)*sizeof(ngx_http_upstream_chash_server_t);
-    new_size = old_size + sizeof(ngx_http_upstream_chash_server_t)*number;   
+    old_size = (ucscf->number + 1)*sizeof(ngx_http_upstream_chash_down_server_t);
+    new_size = old_size + sizeof(ngx_http_upstream_chash_down_server_t)*number;   
 
     ucscf->d_servers = ngx_prealloc(ngx_cycle->pool, ucscf->d_servers, old_size, new_size );
     if (NULL == ucscf->d_servers ) {
